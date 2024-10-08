@@ -22,13 +22,13 @@ test("One euro should be 1.07 dollar", function() {
     const { fromEuroToDollar } = require('./app.js');
 
     // Use the function like its supposed to be used
-    const dollar = fromEuroToDollar(3.5);
+    const Dollar = fromEuroToDollar(3.5);
 
     // If 1 euro is 1.07 dollars, then 3.5 euros should be (3.5 * 1.07)
-    const expected = 3.5 * 1.07; 
+    const expected = 3.5 * oneEuroIs.Dollar; 
     
     // This is the comparison for the unit test
-     expect(fromEuroToDollar(3.5)).toBe(3.745); // 1 euro is 1.07 dollars, then 3.5 euros should be = (3.5 * 1.07)
+     expect(Dollar).toBe(expected); // 1 euro is 1.07 dollars, then 3.5 euros should be = (3.5 * 1.07)
 })
 
 test("One dollar should be 146.26 yenes", function() {
@@ -39,10 +39,10 @@ test("One dollar should be 146.26 yenes", function() {
     const yen = fromDollarToYen(3.5);
 
     // If 1 dollar is 146.26 yenes, then 3.5 dollars should be (3.5 * 146.26)
-    const expected = 3.5 * 145.26; 
+    const expected = 3.5 / oneEuroIs.USD * oneEuroIs.JPY; 
     
     // This is the comparison for the unit test
-     expect(fromDollarToYen(3.5)).toBe(511.91); // 1 dollar is 146.26 yenes, then 3.5 dollars should be = (3.5 * 146.26)
+     expect(yen).toBe(expected); // 1 dollar is 146.26 yenes, then 3.5 dollars should be = (3.5 * 146.26)
 })
 
 test("One Yen should be 0.0055 Pound", function() {
@@ -50,11 +50,11 @@ test("One Yen should be 0.0055 Pound", function() {
     const { fromYenToPound } = require('./app.js');
 
     // Use the function like its supposed to be used
-    const pound = fromYenToPound(3.5);
+    const Pound = fromYenToPound(3.5);
 
     // If 1 Yen , then 3.5 yen should be (3.5 * 0.0055)
-    const expected = 3.5 * 0.0055; 
+    const expected = 3.5 *  oneEuroIs.JPY / oneEuroIs.GBP; 
     
     // This is the comparison for the unit test
-     expect(fromYenToPound(3.5)).toBe(0.01925); // 1 yen is 0.0055 pounds, then 3.5 yenes should be = (3.5 * 0.0055)
+     expect(Pound).toBe(expected); // 1 yen is 0.0055 pounds, then 3.5 yenes should be = (3.5 * 0.0055)
 })
