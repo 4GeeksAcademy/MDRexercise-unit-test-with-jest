@@ -53,7 +53,7 @@ test("One Yen should be 0.0055 Pound", function() {
     const Pound = fromYenToPound(3.5);
 
     // If 1 Yen , then 3.5 yen should be (3.5 * 0.0055)
-    const expected = 3.5 *  oneEuroIs.JPY / oneEuroIs.GBP; 
+    const expected = 3.5 / oneEuroIs.JPY * oneEuroIs.GBP; 
     
     // This is the comparison for the unit test
      expect(Pound).toBe(expected); // 1 yen is 0.0055 pounds, then 3.5 yenes should be = (3.5 * 0.0055)

@@ -24,7 +24,7 @@ const fromDollarToYen = function(valueInDollar) {
 // Declaramos una función con el nombre exacto "formYenToPound"
 const fromYenToPound = function(valueInYen) {
     // Convertimos el valor a Pounds
-    let valueInPound = valueInYen * oneEuroIs.JPY / oneEuroIs.GBP;
+    let valueInPound = valueInYen / oneEuroIs.JPY * oneEuroIs.GBP;
     // Retornamos el valor en dólares
     return valueInPound;
 }
